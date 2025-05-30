@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>สหกรณ์การเกษตรกะทู้ จำกัด</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://bit.ly/fontiton5" type="text/css" charset="utf-8" />
+    <style type="text/css">
+        body {
+            font-family: 'line_seed_sans_th';
+            background : #000000;
+        }
+    
+    </style>
+
+</head>
+
+<body>
+  
+  
+
+
+
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://lh5.googleusercontent.com/d/1gh7ufn1zP6YAh9eKM2JrTuu-f6POZaX1" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="กระดาษาทิชชูเช็ดหน้า KUMA">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://lh5.googleusercontent.com/d/1nozh55aLyOS6r8RopyiPN_dWbnY5R1Hs" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="ข้าวหอมมะลินกเป็ดน้ำ">
+        </div>
+        <!-- Item 3 -->
+<!--         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div> -->
+        <!-- Item 4 -->
+<!--        <div class="hidden duration-700 ease-in-out" data-carousel-item> 
+            <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+       </div>  -->
+        <!-- Item 5 -->
+<!--         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div> -->
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
+
+  
+    <nav class="bg-red-900 text-white  border-gray-200 py-2.5 dark:bg-gray-900">
+        <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+            <a href="#" class="flex items-center">
+                <img id="profileurl" src="https://media.giphy.com/media/QRmJC704DProuxlMkG/giphy.gif?cid=790b76119yps5n8wbsaxv60ohv5h5mwqm350k1r8pyivnusv&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+                    class="h-7 mr-3 sm:h-10 rounded-full" alt="Logo">
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+                    id="displaynamefield">Profile</span>
+            </a>
+            
+
+        </div>
+    </nav>
+  
+  
+
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+
+    <div id="myProject">
+
+    </div>
+  
+    <div class="fixed bottom-6 right-6" onclick="refreshPage()">
+        <a href="#" target="_blank" rel="noopener noreferrer"
+            class="bg-blue-600 text-white font-medium rounded-md px-4 py-2 flex items-center justify-center hover:bg-yellow-600 transition duration-300 ease-in-out shadow-lg">
+            <span class="text-lg mr-2"><img class="w-5 h-5 animate-spin"
+                    src="https://www.svgrepo.com/show/394455/spinner-fidget.svg" alt="Loading icon">
+            </span>
+            ดูรายการล่าสุด
+        </a>
+    </div>
+
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+
+    <script>
+        var params = (new URL(document.location)).searchParams;
+        var iduser = params.get("iduser");
+        $(document).ready(function () {
+            $.getScript("https://roomrentreport.glitch.me/getliff.js", function () {
+
+                initializeLiff("1660892855-wLaRBpOl");
+
+            });
+            if (iduser) {
+                getData(iduser)
+            }
+           
+        });
+
+        function refreshPage() {
+            location.reload(true); // รีเฟรชหน้าเว็บ
+
+        }
+
+
+        let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + "<br>  " + date;
+
+        }, 1000);
+
+        const getData = (id) => {
+            fetch('https://script.google.com/macros/s/AKfycbzGOxacMK6KAdz47g8PybXK4NbxysPrvffDYxtSMzE2o_nUdkTx-ezTJZtLKLB-qhyj/exec?q=' + id)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    data.filter((d, additems) => {
+                        let dataHTML = '';
+                        additems++;
+
+                        dataHTML += `
+        <div class="bg-red-900 border-double border-2 border-sky-500 rounded-lg shadow-lg   px-6 py-8 max-w-md mx-auto mt-8">
+        
+     <h1 class="font-bold text-2xl my-4 text-center text-sky-500">ค่าเช่าประจำเดือน <b>${d.column23}</b></h1>
+     <hr class="mb-2">
+     <div class="flex justify-between mb-6">
+          
+         <div class="text-white">
+             <div>รหัสบิล : <b>${d.column2}</b></div>
+             <div>วันที่ออกบิล : <b>${d.column22}</b> </div>
+             <div>สถานะการชำระ : <b>${d.column24}</b></div>
+             <div>หมายเลขห้อง : <b>${d.column3}</b></div>
+             <div>ชื่อ - สกุล : <b>${d.column4}</b></div>
+             <br>
+             <div>หน่วยไฟครั้งนี้ : <b>${d.column7} </b>หน่วย</div>
+             <div>หน่วยไฟครั้งก่อน : <b>${d.column8} </b>หน่วย</div>
+             <div>หน่วยไฟที่ใช้ : <b>${d.column9} </b>หน่วย</div>
+             <br>
+             <div>หน่วยน้ำครั้งนี้ : <b>${d.column10} </b>หน่วย</div>
+             <div>หน่วยน้ำครั้งก่อน : <b>${d.column11} </b>หน่วย</div>
+             <div>หน่วยน้ำที่ใช้ : <b>${d.column12} </b>หน่วย</div>
+             <br>
+             <div>ค่าน้ำไฟ : <b>${d.column15} </b>บาท</div>
+             <div>ค่าเช่า : <b>${d.column16} </b>บาท</div>
+             <div>ค่าขยะ : <b>${d.column17} </b>บาท</div>
+             <div>ค่าปรับ : <b>${d.column18} </b>บาท</div>
+             <div>ค่าซ่อมแซม : <b>${d.column19} </b>บาท</div>
+             <div>ค่ามัดจำ : <b>${d.column20} </b>บาท</div>
+             
+         </div>
+     </div>
+     
+     <table class="w-full mb-8">
+         
+         <tbody>
+             <tr>
+                  <div class="flex justify-between mb-6">
+                 <td class="text-left font-bold text-white">ยอดรวม</td>
+                 <td class="text-right font-bold text-gray-700"><b><mark class="px-2 text-white bg-red-600 rounded dark:bg-red-500">${d.column21} บาท </mark></b></td>
+                 </div>
+                 </tr>
+                 
+         </tbody>
+         
+     </table>
+   
+    
+ </div>
+          `;
+
+                        document.getElementById('myProject').innerHTML += dataHTML;
+
+
+
+                    });
+                });
+        };
+
+
+    </script>
+
+</body>
+
+</html>
+
