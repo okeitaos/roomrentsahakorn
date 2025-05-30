@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบแจ้งซ่อม</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-purple-600 font-sans">
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
+        <form id="myForm" class="space-y-4">
+            <div class="text-center mb-4">
+                <img src="https://lh5.googleusercontent.com/d/16_HxUWk06zTWoYvj_kIppIcUrnJqMImX" alt="Repair" class="mx-auto" width="150">
+                <h1 class="text-3xl font-semibold text-purple-700">ระบบแจ้งซ่อม</h1>
+            </div>
+            <div>
+                <label for="name" class="block text-gray-700">ชื่อ-สกุล</label>
+                <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="ระบุชื่อ นามสกุล" required>
+            </div>
+            <div>
+                <label for="phone" class="block text-gray-700">เบอร์โทร</label>
+                <input type="tel" id="phone" name="phone" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="ระบุเบอร์โทรศัพท์ 10 หลัก" pattern="[0-9]{10}" required>
+            </div>
+            <div>
+                <label for="device" class="block text-gray-700">อุปกรณ์ที่มีปัญหา</label>
+                <select id="device" name="device" class="w-full p-2 border border-gray-300 rounded-lg" required>
+                    <option value="" disabled selected>เลือกอุปกรณ์หลอดไฟ</option>
+                  
+                    <option value="หลอดไฟสั้นห้องนอน">หลอดไฟสั้นห้องนอน</option>
+                    <option value="หลอดไฟสั้นกลางห้อง">หลอดไฟสั้นกลางห้อง</option>
+                    <option value="หลอดไฟสั้นหลังห้อง">หลอดไฟสั้นหลังห้อง</option>
+                    <option value="หลอดไฟสั้นห้องน้ำ">หลอดไฟสั้นห้องน้ำ</option>
+                    <option value="หลอดไฟสั้นทางเดินชั้น 1">หลอดไฟสั้นทางเดินชั้น 1</option>
+                    <option value="หลอดไฟสั้นทางเดินชั้น 2">หลอดไฟสั้นทางเดินชั้น 2</option>
+                    <option value="หลอดไฟยาวลาดจอดรถ">หลอดไฟยาวลานจอดรถ</option>
+                  
+                    <option value="" disabled selected>สวิชต์ไฟ</option>
+                    <option value="สวิตช์ไฟห้อง">สวิตช์ไฟห้อง</option>
+                    <option value="สวิตช์ไฟห้องน้ำ">สวิตช์ไฟห้องน้ำ</option>
+                    <option value="สวิตช์ไฟห้องนอน">สวิตช์ไฟห้องนอน</option>
+                    <option value="ปลั๊กไฟห้อง">ปลั๊กไฟห้อง</option>
+                    <option value="ปลั๊กไฟห้องนอน">ปลั๊กไฟห้องนอน</option>
+                  
+                    <option value="" disabled selected>สุขภันฑ์</option>
+                    <option value="ชักโครก">ชักโครก</option>
+                    <option value="สายฉีดชำระ">สายฉีดชำระ</option>
+                    <option value="หัวฉีดชำระ">หัวฉีดชำระ</option>
+                    <option value="อ่างล้างหน้า">อ่างล้างหน้า</option>
+                    <option value="ก๊อกอ่างล้างหน้า">ก๊อกอ่างล้างหน้า</option>
+                    <option value="ฝักบัว">ฝักบัว</option>
+                    <option value="สายฝักบัว">สายฝักบัว</option>
+                    <option value="ก๊อกน้ำในห้องน้ำ">ก๊อกน้ำในห้องน้ำ</option>
+                    <option value="ก๊อกน้ำหลังห้อง">ก๊อกน้ำหลังห้อง</option>
+                    <option value="กระจกในห้องน้ำ">กระจกในห้องน้ำ</option>
+                  
+                    <option value="" disabled selected>ประตู,หน้าต่าง</option>
+                    <option value="ประตูห้อง">ประตูห้อง</option>
+                    <option value="ประตูห้องนอน">ประตูห้องนอน</option>
+                    <option value="ประตูห้องน้ำ">ประตูห้องน้ำ</option>
+                    <option value="ประตูหลังห้อง">ประตูหลังห้อง</option>
+                    <option value="หน้าต่างบานเกล็ด">หน้าต่างบานเกล็ด</option>
+                    <option value="กลอนประตู">กลอนประตู</option>
+                    <option value="ลูกบิดประตู">ลูกบิดประตู</option>
+                  
+                    <option value="" disabled selected></option>
+                    <option value="อื่นๆ">อื่นๆ</option>
+                    <!-- Add other devices here -->
+                </select>
+            </div>
+            <div>
+                <label for="problem" class="block text-gray-700">อาการที่พบ</label>
+                <input type="text" id="problem" name="problem" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="ระบุอาการ" required>
+            </div>
+            <div>
+                <label for="place" class="block text-gray-700">เลขห้อง</label>
+                <select id="place" name="place" class="w-full p-2 border border-gray-300 rounded-lg" required>
+                    <option value="" disabled selected>เลือกห้อง</option>
+                    <option value="ห้องที่1">ห้องที่1</option>
+                    <option value="ห้องที่2">ห้องที่2</option>
+                    <option value="ห้องที่3">ห้องที่3</option>
+                    <option value="ห้องที่4">ห้องที่5</option>
+                    <option value="ห้องที่5">ห้องที่5</option>
+                    <option value="ห้องที่6">ห้องที่6</option>
+                    <option value="ห้องที่7">ห้องที่7</option>
+                    <option value="ห้องที่8">ห้องที่8</option>
+                    <option value="ห้องที่9">ห้องที่9</option>
+                    <option value="ห้องที่10">ห้องที่10</option>
+                    <option value="ห้องที่11">ห้องที่11</option>
+                    <option value="ห้องที่12">ห้องที่12</option>
+                    <option value="ห้องที่12/21">ห้องที่12/21</option>
+                    <option value="ห้องที่12/22">ห้องที่12/22</option>
+                    <!-- Add other rooms here -->
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded-lg w-full">
+                    <i class="bi bi-send-fill"></i> แจ้งซ่อม
+                </button>
+            </div>
+        </form>
+    </div>
+
+  <!-- Loading Spinner -->
+        <div id="loading" class="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="loader"></div>
+ 
+
+        <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style> 
+       
+
+    <script>
+        $(document).ready(() => {
+            liff.init({ liffId: '1660892855-dPYge5mn' }).then(() => {
+                console.log('LIFF is ready');
+            });
+        });
+
+        $('#myForm').submit((e) => {
+            e.preventDefault();
+
+            // Show loading spinner
+            $('#loading').removeClass('hidden');
+
+            const formData = {
+                name: $('#name').val(),
+                phone: $('#phone').val(),
+                device: $('#device').val(),
+                problem: $('#problem').val(),
+                place: $('#place').val(),
+                uid: liff.getDecodedIDToken().sub,
+                displayname: liff.getDecodedIDToken().name,
+                pictureUrl: liff.getDecodedIDToken().picture,
+            };
+
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbwmv4HnBHGqCkV3GN-vP16hBOREZ4By8kWxyxrkxJOG5z9XPfdMhAfy9gazveTKzT1CWA/exec',
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    // Hide loading spinner
+                    $('#loading').addClass('hidden');
+
+                    if (response.status === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'แจ้งซ่อมเรียบร้อย',
+                            text: `รหัสงานซ่อม: ${response.id}`,
+                        }).then(() => {
+                            // Send Flex message back to LINE
+                            let flexMessage = {
+                                type: 'flex',
+                                altText: 'แจ้งซ่อมสำเร็จ',
+                                contents: {
+                                    type: 'bubble',
+                                    body: {
+                                        type: 'box',
+                                        layout: 'vertical',
+                                        contents: [
+                                            {
+                                                type: 'text',
+                                                text: '✅ แจ้งซ่อมเรียบร้อย ✅',
+                                                weight: 'bold',
+                                                size: 'xl',
+                                                align: 'center'
+                                            },
+                                            {
+                                                type: 'text',
+                                                text: `รหัสงานซ่อม: ${response.id}`,
+                                                wrap: true
+                                            },
+                                            {
+                                                type: 'text',
+                                                text: `อุปกรณ์: ${formData.device}`,
+                                                wrap: true
+                                            },
+                                            {
+                                                type: 'text',
+                                                text: `อาการ: ${formData.problem}`,
+                                                wrap: true
+                                            }
+                                        ]
+                                    }
+                                }
+                            };
+
+                            liff.sendMessages([flexMessage]).then(() => {
+                                console.log("Message sent");
+                                liff.closeWindow();
+                            });
+                        });
+                    }
+                },
+                error: function(err) {
+                    // Hide loading spinner
+                    $('#loading').addClass('hidden');
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'เกิดข้อผิดพลาด',
+                        text: 'บันทึกข้อมูลไม่สำเร็จ',
+                    });
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
+
+  
+  
+  
